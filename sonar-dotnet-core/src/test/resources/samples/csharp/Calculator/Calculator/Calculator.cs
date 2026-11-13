@@ -1,4 +1,4 @@
-﻿namespace Calculator;
+namespace Calculator;
 
 public class Calculator
 {
@@ -8,5 +8,10 @@ public class Calculator
         return predicate(sum)
             ? sum
             : 0;
+    }
+
+    public int Subtract(int a, int b)
+    {
+        return a - b;
     }
 }
