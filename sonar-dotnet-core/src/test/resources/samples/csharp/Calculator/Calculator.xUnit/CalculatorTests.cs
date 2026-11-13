@@ -1,45 +1,18 @@
-﻿namespace Calculator.xUnit;
+﻿using Xunit;
 
-public class Tests
+namespace Calculator.xUnit;
+
+public class MathTests
 {
     [Fact]
-    public void TestMethod1()
+    public void Subtract_ReturnsDifference()
     {
-        var calculator = new Calculator();
-        var result = calculator.Add(1, 2, x => x > 0);
-        Assert.Equal(3, result);
+        Assert.Equal(2, global::Calculator.Calculator.Subtract(5, 3));
     }
-}
-
-public abstract class BaseClass<T> where T : class
-{
-    [Fact]
-    public void TestMethodInBaseClass() =>
-        Assert.Equal(3, 3);
 
     [Fact]
-    public virtual void VirtualMethodInBaseClass() =>
-        Assert.Equal(1, 1);
-}
-
-public sealed class Derived : BaseClass<string>
-{
-    [Fact]
-    public override void VirtualMethodInBaseClass() =>
-        Assert.Equal(1, 1);
-}
-
-public class GenericTests
-{
-    [Theory]
-    [InlineData(typeof(int))]
-    [InlineData(typeof(string))]
-    public void GenericTestMethod<T>(Type type) => Console.WriteLine(type);
-}
-
-public sealed class GenericDerivedFromGenericClass<T> : BaseClass<T> where T : class
-{
-    [Fact]
-    public void GenericDerivedFromGenericClass_PassMethod() =>
-        Assert.Equal(1, 1);
+    public void Multiply_ReturnsProduct()
+    {
+        Assert.Equal(12, global::Calculator.Calculator.Multiply(3, 4));
+    }
 }
